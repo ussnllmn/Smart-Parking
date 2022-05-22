@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\xilinx_workspace\parking_fpga\parkingEncoder.ncd
+OUTFILE=C:\xilinx_workspace\parking_fpga\parkingEncoder.bit
+FAMILY=Spartan6
+PART=xc6slx9-3tqg144
+WORKINGDIR=C:\xilinx_workspace\parking_fpga
+LICENSE=WebPack
+USER_INFO=__0_0_0

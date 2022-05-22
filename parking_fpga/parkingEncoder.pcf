@@ -1,0 +1,12 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon May 23 02:32:09 2022
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "IR1" LOCATE = SITE "P61" LEVEL 1;
+COMP "IR2" LOCATE = SITE "P62" LEVEL 1;
+COMP "IR3" LOCATE = SITE "P66" LEVEL 1;
+COMP "A" LOCATE = SITE "P81" LEVEL 1;
+COMP "B" LOCATE = SITE "P82" LEVEL 1;
+SCHEMATIC END;
+

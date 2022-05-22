@@ -1,0 +1,7 @@
+
+
+NET "A" LOC = P81;
+NET "B" LOC = P82;
+NET "IR3" LOC = P66;
+NET "IR2" LOC = P62;
+NET "IR1" LOC = P61;
