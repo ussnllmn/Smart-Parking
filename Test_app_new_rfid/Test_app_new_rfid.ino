@@ -66,7 +66,8 @@ void loop() {
             client.println();
 
            
-            client.println("<p>GPIO 5 - UID is " + tag + "</p>");
+            client.println("1,0,1");
+
             // The HTTP response ends with another blank line
             client.println();
             // Break out of the while loop
