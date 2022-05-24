@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\xilinx_workspace\data_storage\d_flipflop_4outbit.ncd
+OUTFILE=C:\xilinx_workspace\data_storage\d_flipflop_4outbit.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=C:\xilinx_workspace\data_storage
+LICENSE=WebPack
+USER_INFO=__0_0_0

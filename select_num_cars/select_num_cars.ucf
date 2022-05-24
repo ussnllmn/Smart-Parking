@@ -1,0 +1,16 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "D0[0]" LOC = P66;
+NET "D0[1]" LOC = P62;
+NET "D0[2]" LOC = P61;
+NET "D0[3]" LOC = P59;
+NET "D1[0]" LOC = P58;
+NET "D1[1]" LOC = P57;
+NET "D1[2]" LOC = P56;
+NET "D1[3]" LOC = P55;
+NET "Z[0]" LOC = P82;
+NET "Z[1]" LOC = P81;
+NET "Z[2]" LOC = P80;
+NET "Z[3]" LOC = P79;
+NET "S0" LOC = P45;

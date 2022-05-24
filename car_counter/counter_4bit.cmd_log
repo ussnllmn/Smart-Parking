@@ -1,0 +1,24 @@
+xst -intstyle ise -ifn "C:/xilinx_workspace/car_counter/counter_4bit.xst" -ofn "C:/xilinx_workspace/car_counter/counter_4bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc counter_4bit.ucf -p xc6slx9-tqg144-3 counter_4bit.ngc counter_4bit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o counter_4bit_map.ncd counter_4bit.ngd counter_4bit.pcf 
+par -w -intstyle ise -ol high -mt off counter_4bit_map.ncd counter_4bit.ncd counter_4bit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml counter_4bit.twx counter_4bit.ncd -o counter_4bit.twr counter_4bit.pcf -ucf counter_4bit.ucf 
+bitgen -intstyle ise -f counter_4bit.ut counter_4bit.ncd 
+xst -intstyle ise -ifn "C:/xilinx_workspace/car_counter/counter_4bit.xst" -ofn "C:/xilinx_workspace/car_counter/counter_4bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc counter_4bit.ucf -p xc6slx9-tqg144-3 counter_4bit.ngc counter_4bit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o counter_4bit_map.ncd counter_4bit.ngd counter_4bit.pcf 
+par -w -intstyle ise -ol high -mt off counter_4bit_map.ncd counter_4bit.ncd counter_4bit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml counter_4bit.twx counter_4bit.ncd -o counter_4bit.twr counter_4bit.pcf -ucf counter_4bit.ucf 
+bitgen -intstyle ise -f counter_4bit.ut counter_4bit.ncd 
+xst -intstyle ise -ifn "C:/xilinx_workspace/car_counter/counter_4bit.xst" -ofn "C:/xilinx_workspace/car_counter/counter_4bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc counter_4bit.ucf -p xc6slx9-tqg144-3 counter_4bit.ngc counter_4bit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o counter_4bit_map.ncd counter_4bit.ngd counter_4bit.pcf 
+par -w -intstyle ise -ol high -mt off counter_4bit_map.ncd counter_4bit.ncd counter_4bit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml counter_4bit.twx counter_4bit.ncd -o counter_4bit.twr counter_4bit.pcf -ucf counter_4bit.ucf 
+bitgen -intstyle ise -f counter_4bit.ut counter_4bit.ncd 
+xst -intstyle ise -ifn "C:/xilinx_workspace/car_counter/counter_4bit.xst" -ofn "C:/xilinx_workspace/car_counter/counter_4bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc counter_4bit.ucf -p xc6slx9-tqg144-2 counter_4bit.ngc counter_4bit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o counter_4bit_map.ncd counter_4bit.ngd counter_4bit.pcf 
+par -w -intstyle ise -ol high -mt off counter_4bit_map.ncd counter_4bit.ncd counter_4bit.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml counter_4bit.twx counter_4bit.ncd -o counter_4bit.twr counter_4bit.pcf -ucf counter_4bit.ucf 
+bitgen -intstyle ise -f counter_4bit.ut counter_4bit.ncd 

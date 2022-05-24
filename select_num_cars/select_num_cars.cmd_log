@@ -1,0 +1,11 @@
+xst -intstyle ise -ifn "C:/xilinx_workspace/select_num_cars/select_num_cars.xst" -ofn "C:/xilinx_workspace/select_num_cars/select_num_cars.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc select_num_cars.ucf -p xc6slx9-tqg144-2 select_num_cars.ngc select_num_cars.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o select_num_cars_map.ncd select_num_cars.ngd select_num_cars.pcf 
+par -w -intstyle ise -ol high -mt off select_num_cars_map.ncd select_num_cars.ncd select_num_cars.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml select_num_cars.twx select_num_cars.ncd -o select_num_cars.twr select_num_cars.pcf -ucf select_num_cars.ucf 
+bitgen -intstyle ise -f select_num_cars.ut select_num_cars.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc select_num_cars.ucf -p xc6slx9-tqg144-2 select_num_cars.ngc select_num_cars.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o select_num_cars_map.ncd select_num_cars.ngd select_num_cars.pcf 
+par -w -intstyle ise -ol high -mt off select_num_cars_map.ncd select_num_cars.ncd select_num_cars.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml select_num_cars.twx select_num_cars.ncd -o select_num_cars.twr select_num_cars.pcf -ucf select_num_cars.ucf 
+bitgen -intstyle ise -f select_num_cars.ut select_num_cars.ncd 

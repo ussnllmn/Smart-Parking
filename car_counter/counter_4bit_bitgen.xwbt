@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\xilinx_workspace\car_counter\counter_4bit.ncd
+OUTFILE=C:\xilinx_workspace\car_counter\counter_4bit.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=C:\xilinx_workspace\car_counter
+LICENSE=WebPack
+USER_INFO=__0_0_0

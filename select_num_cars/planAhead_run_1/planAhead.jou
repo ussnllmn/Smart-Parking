@@ -1,0 +1,56 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Wed May 25 02:45:15 2022
+# Process ID: 10996
+# Log file: C:/xilinx_workspace/select_num_cars/planAhead_run_1/planAhead.log
+# Journal file: C:/xilinx_workspace/select_num_cars/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/xilinx_workspace/select_num_cars/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P66 [get_ports {D0[0]}]
+endgroup
+startgroup
+set_property package_pin P62 [get_ports {D0[1]}]
+endgroup
+startgroup
+set_property package_pin P61 [get_ports {D0[2]}]
+endgroup
+startgroup
+set_property package_pin P59 [get_ports {D0[3]}]
+endgroup
+startgroup
+set_property package_pin P59 [get_ports {D0[3]}]
+endgroup
+set_property package_pin "" [get_ports [list  {D1[3]}]]
+startgroup
+set_property package_pin P58 [get_ports {D1[0]}]
+endgroup
+startgroup
+set_property package_pin P57 [get_ports {D1[1]}]
+endgroup
+startgroup
+set_property package_pin P56 [get_ports {D1[2]}]
+endgroup
+startgroup
+set_property package_pin P55 [get_ports {D1[3]}]
+endgroup
+startgroup
+set_property package_pin P82 [get_ports {Z[0]}]
+endgroup
+startgroup
+set_property package_pin P81 [get_ports {Z[1]}]
+endgroup
+startgroup
+set_property package_pin P80 [get_ports {Z[2]}]
+endgroup
+startgroup
+set_property package_pin P79 [get_ports {Z[3]}]
+endgroup
+save_constraints
+startgroup
+set_property package_pin P45 [get_ports S0]
+endgroup
+save_constraints
