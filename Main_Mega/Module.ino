@@ -37,20 +37,23 @@ void RFID() {
         Serial.println(tag);
 
         Serial.println(user);
-        espSerial.println(tag);
-
-        thisUser += "WELCOME "+user+"            ";     
+        result += park[0];
+        result += ",";
+        result += park[1];
+        result += ",";
+        result += park[2];
+//        result += ",";
+//        result += user;
+        MegaSerial.println(result);
+        result = "";
+        thisUser += "WELCOME " + user + "            ";
         tft.setCursor (20, 170);
-        tft.setTextSize (2);
-        tft.setTextColor (WHITE, 0x31C9);
         tft.print (thisUser);
         thisUser = "";
-        
+
         tft.setCursor (20, 210);
-        tft.setTextSize (2);
-        tft.setTextColor (WHITE, 0x31C9);
-        tft.print (tag+"  ");
-    
+        tft.print (tag + "  ");
+
       } else {
         Serial.print(".");
       }
@@ -69,9 +72,7 @@ void Clock() {
   //  Serial.print("Time = ");
   //  Serial.println(thisTime);
   tft.setCursor (210, 210);
-  tft.setTextSize (2);
-  tft.setTextColor (WHITE, 0x31C9);
   tft.print (thisTime);
-  delay (500);
+  delay (200);
   thisTime = "";
 }

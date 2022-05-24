@@ -1,4 +1,6 @@
 #include <ESP8266WiFi.h>
+#include <SoftwareSerial.h>
+SoftwareSerial NodeSerial(D2, D3);
 
 // Network credentials
 const char* ssid     = "Mero Asebi";
@@ -11,8 +13,13 @@ unsigned long previousTime = 0;
 const long timeoutTime = 2000;
 /////////////////////////////////////
 
+int b1 = 0, b2 = 0, b3 = 0;
+String recive = "", temp = "";
+String header;
+
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
+  NodeSerial.begin(57600);
   Serial.print("Connecting to ");
   Serial.println(ssid);
   WiFi.begin(ssid, password);
@@ -27,9 +34,15 @@ void setup() {
 }
 
 void loop() {
-  if (Serial.available()) {
-    Serial.write(Serial.read());
+
+  while (NodeSerial.available() > 0)
+  {
+    recive = "";
+    recive = NodeSerial.readString();
+    temp = recive;
+    Serial.println(recive);
   }
+
   WiFiClient client = server.available();   // Listen for incoming clients
   if (client) {                             // If a new client connects,
     Serial.println("\n--- New Client ---"); // print a message out in the serial port
@@ -41,7 +54,7 @@ void loop() {
       if (client.available()) {             // if there's bytes to read from the client,
         char c = client.read();             // read a byte, then
         Serial.write(c);                    // print it out the serial monitor
-
+        header += c;
         if (c == '\n') {                    // if the byte is a newline character
           if (currentLine.length() == 0) {
             // HTTP headers always start with a response code (e.g. HTTP/1.1 200 OK)
@@ -51,15 +64,26 @@ void loop() {
             client.println("Connection: close");
             client.println();
 
+            if (header.indexOf("GET /1/100") >= 0) b1 += 100;
+            else if (header.indexOf("GET /2/100") >= 0) b2 += 100;
+            else if (header.indexOf("GET /3/100") >= 0) b3 += 100;
 
-            client.println("1,0,1");
+            if (recive == "")
+              recive = "0,0,0";
+            recive = "";
+            recive = temp;
+            recive += ",";
+            recive += b1;
+            recive += ",";
+            recive += b2;
+            recive += ",";
+            recive += b3;
 
-            // The HTTP response ends with another blank line
-            client.println();
-            // Break out of the while loop
+            client.print(recive);
+            Serial.println(recive);
 
             break;
-          } else { // if you got a newline, then clear currentLine
+          } else {
             currentLine = "";
           }
         } else if (c != '\r') {  // if you got anything else but a carriage return character,
@@ -67,6 +91,7 @@ void loop() {
         }
       }
     }
+    header = "";
     client.stop();
     Serial.println("Client disconnected.");
   }

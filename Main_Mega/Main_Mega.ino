@@ -11,23 +11,20 @@ RFID rfid(SS_PIN, RST_PIN);
 DS1302 rtc(26, 24, 22);
 Time t;
 
-SoftwareSerial espSerial(46, 44);
+SoftwareSerial MegaSerial(A8, A9); 
 int park[3];
 int InputA = 14, InputB = 15, A, B;
-String tag, thisTime, thisUser, cars, user;
+String tag, thisTime, thisUser, cars, user , result;
 
 int BLACK = 0x31C9, WHITE = 0xFFFF, RED = 0x9800, GREEN = 0x04C0, BLUE = 0x001F;
 int CYAN = 0x07FF, MAGENTA = 0xF81F, YELLOW = 0xFFE0, GREY = 0x2108;
 byte LCD_CS = A3, LCD_CD = A2, LCD_WR = A1, LCD_RD = A0, LCD_RESET = A4;
 Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
 
-uint16_t xpos = 200;
-int dec = 20;
-
 void setup()
 {
-  Serial.begin(115200);
-  espSerial.begin(115200);
+  Serial.begin(9600);
+  MegaSerial.begin(57600);
   SPI.begin();
   rfid.init();
   rtc.halt(false);
@@ -52,20 +49,20 @@ void setup()
   tft.fillRect(105, 2, 2, 155, 0xBC9F);
   tft.fillRect(212, 2, 2, 155, 0xBC9F);
   tft.fillRect(0, 155, 320, 2, 0xBC9F);
-  
+
   tft.setTextSize (2);
   tft.setTextColor (WHITE, 0x31C9);
-  
+
   tft.setCursor (20, 131);
   tft.print ("Park 1");
   tft.setCursor (125, 131);
   tft.print ("Park 2");
   tft.setCursor (231, 131);
   tft.print ("Park 3");
-  
+
   tft.setCursor (39, 170);
   tft.print ("Please tap your card");
-  
+
   //  // Draw clock face
   //  tft.drawCircle(xpos, 120 - dec, 125 - dec, 0xFFE0);
   //  tft.fillCircle(xpos, 120 - dec, 118 - dec, 0x001F); //warna lingkaran luar
@@ -76,6 +73,9 @@ void setup()
 
 void loop()
 {
+  if (Serial.available()) {
+    Serial.write(Serial.read());
+  }
   RFID();
   if (park[0] == 0)
     tft.fillRect(2, 2, 104, 120, GREEN);
@@ -90,7 +90,6 @@ void loop()
   else
     tft.fillRect(214, 2, 104, 120, RED);
 
-  //  Display_clock();
   Clock();
 }
 
