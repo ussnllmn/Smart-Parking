@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/xilinx_workspace/data_storage/d_flipflop_4outbit.xst" -ofn "C:/xilinx_workspace/data_storage/d_flipflop_4outbit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc d_flipflop_4outbit.ucf -p xc6slx9-tqg144-2 d_flipflop_4outbit.ngc d_flipflop_4outbit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o d_flipflop_4outbit_map.ncd d_flipflop_4outbit.ngd d_flipflop_4outbit.pcf 
+par -w -intstyle ise -ol high -mt off d_flipflop_4outbit_map.ncd d_flipflop_4outbit.ncd d_flipflop_4outbit.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml d_flipflop_4outbit.twx d_flipflop_4outbit.ncd -o d_flipflop_4outbit.twr d_flipflop_4outbit.pcf -ucf d_flipflop_4outbit.ucf 
+bitgen -intstyle ise -f d_flipflop_4outbit.ut d_flipflop_4outbit.ncd 

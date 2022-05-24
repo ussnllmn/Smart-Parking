@@ -1,0 +1,8 @@
+Release 14.7 Drc P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Wed May 25 03:08:03 2022
+
+drc -z select_num_cars.ncd select_num_cars.pcf
+
+DRC detected 0 errors and 0 warnings.
