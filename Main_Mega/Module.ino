@@ -1,3 +1,4 @@
+int serNum0, serNum1, serNum2, serNum3, serNum4;
 void RFID() {
   if (rfid.isCard()) {
     if (rfid.readCardSerial()) {
@@ -18,9 +19,38 @@ void RFID() {
         for (byte i = 0; i < 4; i++) {
           tag += rfid.serNum[i];
         }
+
+        if (tag == "83173155167") {
+          user = "DEW";
+          park[0] = 1;
+        }
+        if (tag == "6620217313") {
+          user = "FON";
+          park[1] = 1;
+        }
+        if (tag == "21119012328") {
+          user = "SEK";
+          park[2] = 1;
+        }
+
         Serial.print("UID = ");
         Serial.println(tag);
+
+        Serial.println(user);
         espSerial.println(tag);
+
+        thisUser += "WELCOME "+user+"            ";     
+        tft.setCursor (20, 170);
+        tft.setTextSize (2);
+        tft.setTextColor (WHITE, 0x31C9);
+        tft.print (thisUser);
+        thisUser = "";
+        
+        tft.setCursor (20, 210);
+        tft.setTextSize (2);
+        tft.setTextColor (WHITE, 0x31C9);
+        tft.print (tag+"  ");
+    
       } else {
         Serial.print(".");
       }
@@ -31,20 +61,17 @@ void RFID() {
 
 void Clock() {
   t = rtc.getTime();
-
-  Serial.print("Today = ");
-  Serial.print(t.date, DEC);
-  Serial.print(" ");
-  Serial.print(rtc.getMonthStr());
-  Serial.print(" ");
-  Serial.println(t.year, DEC);
-
-  Serial.print("Time = ");
-  Serial.print(t.hour, DEC);
-  Serial.print(":");
-  Serial.print(t.min, DEC);
-  Serial.print(":");
-  Serial.println(t.sec, DEC);
-  Serial.println("- - - - - - - - - - -");
-  delay (1000);
+  thisTime += t.hour;
+  thisTime += ":";
+  thisTime += t.min;
+  thisTime += ":";
+  thisTime += t.sec;
+  //  Serial.print("Time = ");
+  //  Serial.println(thisTime);
+  tft.setCursor (210, 210);
+  tft.setTextSize (2);
+  tft.setTextColor (WHITE, 0x31C9);
+  tft.print (thisTime);
+  delay (500);
+  thisTime = "";
 }
