@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Wed May 25 12:00:35 2022">
+<application name="pn" timeStamp="Thu May 26 06:01:57 2022">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="D4C77B878785414E85B2194A66143866" type="project"/>
-<property name="ProjectIteration" value="11" type="project"/>
+<property name="ProjectIteration" value="24" type="project"/>
 <property name="ProjectFile" value="C:/xilinx_workspace/parking_top/parking_top.xise" type="project"/>
 <property name="ProjectCreationTimestamp" value="2022-05-25T06:08:02" type="project"/>
 </section>
@@ -24,10 +24,11 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_UserConstraintEditorPreference" value="Text Editor" type="process"/>
 <property name="PROP_intProjectCreationTimestamp" value="2022-05-25T06:08:02" type="design"/>
 <property name="PROP_intWbtProjectID" value="D4C77B878785414E85B2194A66143866" type="design"/>
-<property name="PROP_intWbtProjectIteration" value="11" type="process"/>
+<property name="PROP_intWbtProjectIteration" value="24" type="process"/>
 <property name="PROP_intWorkingDirLocWRTProjDir" value="Same" type="design"/>
 <property name="PROP_intWorkingDirUsed" value="No" type="design"/>
 <property name="PROP_lockPinsUcfFile" value="changed" type="process"/>
+<property name="PROP_xilxBitgStart_IntDone" value="true" type="process"/>
 <property name="PROP_AutoTop" value="true" type="design"/>
 <property name="PROP_DevFamily" value="Spartan6" type="design"/>
 <property name="PROP_DevDevice" value="xc6slx9" type="design"/>
@@ -37,7 +38,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_DevSpeed" value="-2" type="design"/>
 <property name="PROP_PreferredLanguage" value="Verilog" type="design"/>
 <property name="FILE_UCF" value="1" type="source"/>
-<property name="FILE_VHDL" value="6" type="source"/>
+<property name="FILE_VHDL" value="7" type="source"/>
 </section>
 </application>
 </document>

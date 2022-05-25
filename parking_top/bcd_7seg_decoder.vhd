@@ -31,25 +31,42 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity bcd_7seg_decoder is
     Port ( B_in : in  STD_LOGIC_VECTOR(3 downto 0);
-           A : out  STD_LOGIC;
-           B : out  STD_LOGIC;
-           C : out  STD_LOGIC;
-           D : out  STD_LOGIC;
-           E : out  STD_LOGIC;
-           F : out  STD_LOGIC;
-           G : out  STD_LOGIC);
+           Seven_Segment : out STD_LOGIC_VECTOR (6 downto 0));
 end bcd_7seg_decoder;
 
 architecture Behavioral of bcd_7seg_decoder is
 
 begin
-	A <= B_in(0) OR B_in(2) OR (B_in(1) AND B_in(3)) OR (NOT B_in(1) AND NOT B_in(3));
-	B <= (NOT B_in(1)) OR (NOT B_in(2) AND NOT B_in(3)) OR (B_in(2) AND B_in(3));
-	C <= B_in(1) OR NOT B_in(2) OR B_in(3);
-	D <= (NOT B_in(1) AND NOT B_in(3)) OR (B_in(2) AND NOT B_in(3)) OR (B_in(1) AND NOT B_in(2) AND B_in(3)) OR (NOT B_in(1) AND B_in(2)) OR B_in(0);
-	E <= (NOT B_in(1) AND NOT B_in(3)) OR (B_in(2) AND NOT B_in(3));
-	F <= B_in(0) OR (NOT B_in(2) AND NOT B_in(3)) OR (B_in(1) AND NOT B_in(2)) OR (B_in(1) AND NOT B_in(3));
-	G <= B_in(0) OR (B_in(1) AND NOT B_in(2)) OR ( NOT B_in(1) AND B_in(2)) OR (B_in(2) AND NOT B_in(3));
+	process(B_in)
+begin
+ 
+case B_in is
+when "0000" =>
+Seven_Segment <= "1111110"; --0
+when "0001" =>
+Seven_Segment <= "0110000"; --1
+when "0010" =>
+Seven_Segment <= "1101101"; --2
+when "0011" =>
+Seven_Segment <= "1111001"; --3
+when "0100" =>
+Seven_Segment <= "0110011"; --4
+when "0101" =>
+Seven_Segment <= "1011011"; --5
+when "0110" =>
+Seven_Segment <= "1011111"; --6
+when "0111" =>
+Seven_Segment <= "1110000"; --7
+when "1000" =>
+Seven_Segment <= "1111111"; --8
+when "1001" =>
+Seven_Segment <= "1111011"; --9
+when others =>
+Seven_Segment <= "0000000"; --null
+end case;
+ 
+end process;
+
 
 
 

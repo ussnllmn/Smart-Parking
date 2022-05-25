@@ -1,73 +1,10 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
-# Start of session at: Wed May 25 08:12:50 2022
-# Process ID: 8280
+# Start of session at: Thu May 26 05:44:41 2022
+# Process ID: 8124
 # Log file: C:/xilinx_workspace/parking_top/planAhead_run_1/planAhead.log
 # Journal file: C:/xilinx_workspace/parking_top/planAhead_run_1/planAhead.jou
 #-----------------------------------------------------------
 start_gui
-source C:/xilinx_workspace/parking_top/pa.fromHdl.tcl
-update_compile_order -fileset sim_1
-startgroup
-set_property package_pin P41 [get_ports A]
-endgroup
-startgroup
-set_property package_pin P40 [get_ports B]
-endgroup
-startgroup
-set_property package_pin P35 [get_ports C]
-endgroup
-startgroup
-set_property package_pin P34 [get_ports D]
-endgroup
-startgroup
-set_property package_pin P32 [get_ports E]
-endgroup
-startgroup
-set_property package_pin P29 [get_ports F]
-endgroup
-startgroup
-set_property package_pin P27 [get_ports G]
-endgroup
-startgroup
-set_property package_pin P66 [get_ports IR1_FPGA]
-endgroup
-startgroup
-set_property package_pin P62 [get_ports IR2_FPGA]
-endgroup
-startgroup
-set_property package_pin P61 [get_ports IR3_FPGA]
-endgroup
-startgroup
-set_property package_pin P82 [get_ports num_car_lsb]
-endgroup
-startgroup
-set_property package_pin P81 [get_ports num_car_msb]
-endgroup
-startgroup
-set_property package_pin P59 [get_ports RFID]
-endgroup
-startgroup
-set_property package_pin P58 [get_ports RST_DATA]
-endgroup
-startgroup
-set_property package_pin P57 [get_ports RTC]
-endgroup
-startgroup
-set_property package_pin P56 [get_ports SW_FPGA]
-endgroup
-save_constraints
-refresh_design
-startgroup
-set_property package_pin P55 [get_ports RFID]
-endgroup
-save_constraints
-startgroup
-set_property package_pin P112 [get_ports RTC]
-endgroup
-save_constraints
-startgroup
-set_property package_pin P50 [get_ports RTC]
-endgroup
-save_constraints
+source C:/xilinx_workspace/parking_top/pa.fromNetlist.tcl

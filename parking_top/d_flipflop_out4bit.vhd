@@ -43,7 +43,7 @@ begin
 	begin
 		if(rst='1') then 
 		Q <= "0000";
-		elsif(clk'event and clk = '1') then
+		elsif(clk'event and clk = '0') then
 		Q <= D;
 		end if;
 	end process;

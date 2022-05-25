@@ -3,11 +3,17 @@
 	<Ifc Id="ROOT" Top="1">
 		<Port Id="RTC" Dir="IN"/>
 		<Port Id="RFID" Dir="IN"/>
+		<Port Id="CLK_in" Dir="IN"/>
 		<Port Id="RST_DATA" Dir="IN"/>
+		<Port Id="RST_COUNTER" Dir="IN"/>
 		<Port Id="SW_FPGA" Dir="IN"/>
 		<Port Id="IR1_FPGA" Dir="IN"/>
 		<Port Id="IR2_FPGA" Dir="IN"/>
 		<Port Id="IR3_FPGA" Dir="IN"/>
+		<Port Id="COMMON_0" Dir="OUT"/>
+		<Port Id="COMMON_1" Dir="OUT"/>
+		<Port Id="COMMON_2" Dir="OUT"/>
+		<Port Id="COMMON_3" Dir="OUT"/>
 		<Port Id="num_car_msb" Dir="OUT"/>
 		<Port Id="num_car_lsb" Dir="INOUT"/>
 		<Port Id="A" Dir="OUT"/>
