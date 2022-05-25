@@ -68,10 +68,10 @@ void loop() {
             else if (header.indexOf("GET /2/100") >= 0) b2 += 100;
             else if (header.indexOf("GET /3/100") >= 0) b3 += 100;
 
-            if (recive == ""){
+            if (recive == "") {
               recive = "Guest,0,0,0";
               temp = recive;
-            }        
+            }
             else {
               recive = "";
               recive = temp;
@@ -86,8 +86,13 @@ void loop() {
 
             client.print(recive);
             Serial.println(recive);
-            NodeSerial.println(recive);
 
+            int index = recive.indexOf(',');
+            String username = recive.substring(0, index);
+            if (username == "DEW") NodeSerial.println(b1);
+            else if (username == "FON") NodeSerial.println(b2);
+            else if (username == "SEK") NodeSerial.println(b3);
+            
             break;
           } else {
             currentLine = "";
