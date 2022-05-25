@@ -7,6 +7,9 @@
 
 Servo In_servo;
 Servo Out_servo;
+int In_ir = A10, Out_ir = A11, in, out;
+boolean in_status, out_status, bfor;
+
 #define SS_PIN 45
 #define RST_PIN 53
 RFID rfid(SS_PIN, RST_PIN);
@@ -34,16 +37,18 @@ void setup()
   rtc.writeProtect(false);
   In_servo.attach(44);
   Out_servo.attach(46);
-  pinMode(InputA, OUTPUT);
-  pinMode(InputB, OUTPUT);
+  pinMode(InputA, INPUT);
+  pinMode(InputB, INPUT);
+  pinMode(In_ir, INPUT);
+  pinMode(Out_ir, INPUT);
   // The following lines can be commented out to use the values already stored in the DS1302
   // rtc.setDOW(MONDAY); // Set Day-of-Week to FRIDAY
   // rtc.setTime(19,55, 10); // Set the time to 12:00:00 (24hr format)
   // rtc.setDate(23, 5, 2022); // Set the date to August 6th, 2010
-  
+
   In_servo.write(0);
   Out_servo.write(0);
-  
+
   tft.reset();
   tft.begin(0x9341);
   tft.setRotation(3);
@@ -79,18 +84,20 @@ void loop()
     balance = MegaSerial.readString();
     Serial.println(balance.toInt());
 
-    if (balance.toInt() > 0) {
+    if (balance.toInt() >= 0) {
       tft.setCursor (20, 210);
       tft.print ("Balance " + balance + "  ");
-      In_servo.write(90);
+      in_status = true;
     } else {
       tft.setCursor (20, 210);
       tft.print ("Inefficient balance");
-      In_servo.write(0);
+
     }
   }
 
   RFID();
+  Door();
+
   if (park[0] == 0)
     tft.fillRect(2, 2, 104, 120, GREEN);
   else
@@ -105,6 +112,25 @@ void loop()
     tft.fillRect(214, 2, 104, 120, RED);
 
   //  Clock();
+}
+void Door() {
+  in = digitalRead(In_ir);
+  out = digitalRead(Out_ir);
+  //  Serial.println(out);
+  if (in_status == true && in == false) {
+    In_servo.write(90);
+    bfor = 1;
+  } else if (in_status == true && in == true && bfor == 1) {
+    delay(5000);
+    bfor = 0;
+    in_status = false;
+    In_servo.write(0);
+  }
+  if (out == false) {
+    Out_servo.write(90);
+    delay(5000);
+    Out_servo.write(0);
+  }
 }
 
 void Decoder() {

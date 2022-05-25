@@ -45,7 +45,9 @@ void RFID() {
         result += park[1];
         result += ",";
         result += park[2];
-
+        
+        in_status = true;
+        
         MegaSerial.print(result);
         result = "";
         thisUser += "WELCOME " + user + "            ";
