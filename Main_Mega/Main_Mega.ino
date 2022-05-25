@@ -27,6 +27,10 @@ int CYAN = 0x07FF, MAGENTA = 0xF81F, YELLOW = 0xFFE0, GREY = 0x2108;
 byte LCD_CS = A3, LCD_CD = A2, LCD_WR = A1, LCD_RD = A0, LCD_RESET = A4;
 Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
 
+////////////// FPGA //////////////
+int S_rfid = A15;
+//////////////////////////////////
+
 void setup()
 {
   Serial.begin(9600);
@@ -41,6 +45,10 @@ void setup()
   pinMode(InputB, INPUT);
   pinMode(In_ir, INPUT);
   pinMode(Out_ir, INPUT);
+
+  pinMode(S_rfid , OUTPUT);
+
+  
   // The following lines can be commented out to use the values already stored in the DS1302
   // rtc.setDOW(MONDAY); // Set Day-of-Week to FRIDAY
   // rtc.setTime(19,55, 10); // Set the time to 12:00:00 (24hr format)
@@ -96,7 +104,7 @@ void loop()
   }
 
   RFID();
-  Door();
+  //Door();
 
   if (park[0] == 0)
     tft.fillRect(2, 2, 104, 120, GREEN);

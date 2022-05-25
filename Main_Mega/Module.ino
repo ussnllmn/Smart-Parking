@@ -47,7 +47,10 @@ void RFID() {
         result += park[2];
         
         in_status = true;
-        
+
+        digitalWrite(S_rfid , HIGH);
+       
+        digitalWrite(S_rfid , LOW);
         MegaSerial.print(result);
         result = "";
         thisUser += "WELCOME " + user + "            ";
