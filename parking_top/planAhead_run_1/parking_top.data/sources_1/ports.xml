@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Port Id="RTC" Dir="IN"/>
+		<Port Id="RFID" Dir="IN"/>
+		<Port Id="RST_DATA" Dir="IN"/>
+		<Port Id="SW_FPGA" Dir="IN"/>
+		<Port Id="IR1_FPGA" Dir="IN"/>
+		<Port Id="IR2_FPGA" Dir="IN"/>
+		<Port Id="IR3_FPGA" Dir="IN"/>
+		<Port Id="num_car_msb" Dir="OUT"/>
+		<Port Id="num_car_lsb" Dir="INOUT"/>
+		<Port Id="A" Dir="OUT"/>
+		<Port Id="B" Dir="OUT"/>
+		<Port Id="C" Dir="OUT"/>
+		<Port Id="D" Dir="OUT"/>
+		<Port Id="E" Dir="OUT"/>
+		<Port Id="F" Dir="OUT"/>
+		<Port Id="G" Dir="OUT"/>
+	</Ifc>
+</Interface>
+

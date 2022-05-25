@@ -19,7 +19,8 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use IEEE.STD_LOGIC_ARITH.all;
+use IEEE.STD_LOGIC_UNSIGNED.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -40,9 +41,12 @@ architecture Behavioral of counter_4bit is
 begin
 	process(rst,clk)
 		begin
-          if (rst = '1') then count <= "0000";
-          elsif (clk'event and clk = '1') then count <= count + 1;
-          end if;
+			
+			if (rst = '1') then count <= "0000";
+			elsif (clk'event and clk = '1') then count <= count + 1;
+			elsif (count > "1001") then count <="0000";
+			end if;
+			
       end process;
       o <= count;
 

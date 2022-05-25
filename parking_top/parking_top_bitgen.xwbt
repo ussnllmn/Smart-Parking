@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\xilinx_workspace\parking_top\parking_top.ncd
+OUTFILE=C:\xilinx_workspace\parking_top\parking_top.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=C:\xilinx_workspace\parking_top
+LICENSE=WebPack
+USER_INFO=__0_0_0

@@ -32,11 +32,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity parking_top is
     Port ( RTC : in  STD_LOGIC;
            RFID : in  STD_LOGIC;
+			  CLK_in : in STD_LOGIC;
 			  RST_DATA : in STD_LOGIC;
            SW_FPGA : in  STD_LOGIC;
            IR1_FPGA : in  STD_LOGIC;
            IR2_FPGA : in  STD_LOGIC;
            IR3_FPGA : in  STD_LOGIC;
+			  COMMON_0, COMMON_1, COMMON_2, COMMON_3 : out STD_LOGIC;
            num_car_msb : out  STD_LOGIC;
            num_car_lsb : inout  STD_LOGIC;
            A, B, C, D, E, F, G : out  STD_LOGIC);
@@ -91,53 +93,62 @@ architecture Behavioral of parking_top is
 --------------------- map port ----------------------------------------
 -----------------------------------------------------------------------
 signal out_counter, out_data_storage, out_select : STD_LOGIC_VECTOR(3 downto 0);
-
+signal common_high : STD_LOGIC :='1';
+signal common_low : STD_LOGIC := '0';
+signal clk_out1, clk_out2 : STD_LOGIC;
 
 begin
-
+	COMMON_0 <= common_low;
+	COMMON_1 <= common_high;
+	COMMON_2 <= common_high;
+	COMMON_3 <= common_high;
+	
+	clk_out1 <= RTC and CLK_IN;
+	clk_out2 <= RFID and CLK_in;
+	
 	Block0 : entity work.parking_encoder
 	port map(
-				IR1 <= IR1_FPGA,
-				IR2 <= IR2_FPGA,
-				IR3 <= IR3_FPGA,
-				A <= num_car_msb,
-				B <= num_car_lsb
+				IR1 => IR1_FPGA,
+				IR2 => IR2_FPGA,
+				IR3 => IR3_FPGA,
+				A => num_car_msb,
+				B => num_car_lsb
 	);
 
 	
 	Block1 : entity work.counter_4bit
 	port map(
-				clk <= RFID,
-				rst <= RTC,
-				o <= out_counter	
+				clk => clk_out2,
+				rst => clk_out1,
+				o => out_counter	
 	);
 	
 	Block2 : entity work.d_flipflop_out4bit
 	port map(
-				D <= out_counter,
-				clk <= RTC,
-				rst <= RST_DATA,
-				Q <= out_data_storage
+				D => out_counter,
+				clk => clk_out1,
+				rst => RST_DATA,
+				Q => out_data_storage
 	);
 	
 	Block3 : entity work.select_num_cars
 	port map(
-				D0 <= out_counter,
-				D1 <= out_data_storage,
-				S0 <= SW_FPGA,
-				Z <= out_select
+				D0 => out_counter,
+				D1 => out_data_storage,
+				S0 => SW_FPGA,
+				Z => out_select
 	);
 	
 	Block4 : entity work.bcd_7seg_decoder
 	port map(
-				B_in <= out_select,
-				A <= A,
-				B <= B,
-				C <= C,
-				D <= D,
-				E <= E,
-				F <= F,
-				G <= G
+				B_in => out_select,
+				A => A,
+				B => B,
+				C => C,
+				D => D,
+				E => E,
+				F => F,
+				G => G
 	);
 	
 	

@@ -1,0 +1,159 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml parking_top.twx parking_top.ncd -o parking_top.twr
+parking_top.pcf -ucf parking_top.ucf
+
+Design file:              parking_top.ncd
+Physical constraint file: parking_top.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock CLK_in
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+RST_DATA    |   -0.312(R)|      FAST  |    1.392(R)|      SLOW  |clk_out1          |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock RTC
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+RST_DATA    |   -1.869(R)|      FAST  |    3.970(R)|      SLOW  |clk_out1          |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock CLK_in to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+A           |        14.008(R)|      SLOW  |         5.818(R)|      FAST  |clk_out1          |   0.000|
+            |        14.132(R)|      SLOW  |         5.736(R)|      FAST  |clk_out2          |   0.000|
+B           |        13.419(R)|      SLOW  |         5.867(R)|      FAST  |clk_out1          |   0.000|
+            |        13.663(R)|      SLOW  |         5.796(R)|      FAST  |clk_out2          |   0.000|
+C           |        13.411(R)|      SLOW  |         5.700(R)|      FAST  |clk_out1          |   0.000|
+            |        13.025(R)|      SLOW  |         5.625(R)|      FAST  |clk_out2          |   0.000|
+D           |        13.470(R)|      SLOW  |         6.138(R)|      FAST  |clk_out1          |   0.000|
+            |        13.594(R)|      SLOW  |         5.783(R)|      FAST  |clk_out2          |   0.000|
+E           |        13.248(R)|      SLOW  |         5.597(R)|      FAST  |clk_out1          |   0.000|
+            |        13.372(R)|      SLOW  |         5.751(R)|      FAST  |clk_out2          |   0.000|
+F           |        13.152(R)|      SLOW  |         5.783(R)|      FAST  |clk_out1          |   0.000|
+            |        13.257(R)|      SLOW  |         5.514(R)|      FAST  |clk_out2          |   0.000|
+G           |        13.631(R)|      SLOW  |         5.943(R)|      FAST  |clk_out1          |   0.000|
+            |        13.553(R)|      SLOW  |         5.849(R)|      FAST  |clk_out2          |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock RFID to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+A           |        17.037(R)|      SLOW  |         7.495(R)|      FAST  |clk_out2          |   0.000|
+B           |        16.568(R)|      SLOW  |         7.555(R)|      FAST  |clk_out2          |   0.000|
+C           |        15.930(R)|      SLOW  |         7.384(R)|      FAST  |clk_out2          |   0.000|
+D           |        16.499(R)|      SLOW  |         7.542(R)|      FAST  |clk_out2          |   0.000|
+E           |        16.277(R)|      SLOW  |         7.510(R)|      FAST  |clk_out2          |   0.000|
+F           |        16.162(R)|      SLOW  |         7.273(R)|      FAST  |clk_out2          |   0.000|
+G           |        16.458(R)|      SLOW  |         7.608(R)|      FAST  |clk_out2          |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock RTC to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+A           |        16.586(R)|      SLOW  |         7.375(R)|      FAST  |clk_out1          |   0.000|
+B           |        15.997(R)|      SLOW  |         7.424(R)|      FAST  |clk_out1          |   0.000|
+C           |        15.989(R)|      SLOW  |         7.257(R)|      FAST  |clk_out1          |   0.000|
+D           |        16.048(R)|      SLOW  |         7.695(R)|      FAST  |clk_out1          |   0.000|
+E           |        15.826(R)|      SLOW  |         7.154(R)|      FAST  |clk_out1          |   0.000|
+F           |        15.730(R)|      SLOW  |         7.340(R)|      FAST  |clk_out1          |   0.000|
+G           |        16.209(R)|      SLOW  |         7.500(R)|      FAST  |clk_out1          |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock CLK_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_in         |    1.926|    0.829|         |         |
+RFID           |    1.926|         |         |         |
+RTC            |    3.407|    3.407|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock RFID
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_in         |    1.740|   -1.352|         |         |
+RFID           |    1.740|         |         |         |
+RTC            |    0.643|    0.643|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock RTC
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_in         |    1.926|         |         |         |
+RFID           |    1.926|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+IR1_FPGA       |num_car_lsb    |    9.240|
+IR1_FPGA       |num_car_msb    |    8.939|
+IR2_FPGA       |num_car_lsb    |    9.044|
+IR2_FPGA       |num_car_msb    |    8.743|
+IR3_FPGA       |num_car_lsb    |    8.762|
+IR3_FPGA       |num_car_msb    |    8.461|
+SW_FPGA        |A              |   11.684|
+SW_FPGA        |B              |   11.336|
+SW_FPGA        |C              |   10.774|
+SW_FPGA        |D              |   11.146|
+SW_FPGA        |E              |   10.924|
+SW_FPGA        |F              |   10.914|
+SW_FPGA        |G              |   11.105|
+---------------+---------------+---------+
+
+
+Analysis completed Wed May 25 12:00:44 2022 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4548 MB
+
+
+

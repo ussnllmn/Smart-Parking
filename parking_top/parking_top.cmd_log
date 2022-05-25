@@ -1,0 +1,101 @@
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-3 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-3 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+par -w -intstyle ise -ol high -mt off parking_top_map.ncd parking_top.ncd parking_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml parking_top.twx parking_top.ncd -o parking_top.twr parking_top.pcf -ucf parking_top.ucf 
+bitgen -intstyle ise -f parking_top.ut parking_top.ncd 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+par -w -intstyle ise -ol high -mt off parking_top_map.ncd parking_top.ncd parking_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml parking_top.twx parking_top.ncd -o parking_top.twr parking_top.pcf -ucf parking_top.ucf 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+par -w -intstyle ise -ol high -mt off parking_top_map.ncd parking_top.ncd parking_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml parking_top.twx parking_top.ncd -o parking_top.twr parking_top.pcf -ucf parking_top.ucf 
+bitgen -intstyle ise -f parking_top.ut parking_top.ncd 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+par -w -intstyle ise -ol high -mt off parking_top_map.ncd parking_top.ncd parking_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml parking_top.twx parking_top.ncd -o parking_top.twr parking_top.pcf -ucf parking_top.ucf 
+bitgen -intstyle ise -f parking_top.ut parking_top.ncd 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+par -w -intstyle ise -ol high -mt off parking_top_map.ncd parking_top.ncd parking_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml parking_top.twx parking_top.ncd -o parking_top.twr parking_top.pcf -ucf parking_top.ucf 
+bitgen -intstyle ise -f parking_top.ut parking_top.ncd 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+par -w -intstyle ise -ol high -mt off parking_top_map.ncd parking_top.ncd parking_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml parking_top.twx parking_top.ncd -o parking_top.twr parking_top.pcf -ucf parking_top.ucf 
+bitgen -intstyle ise -f parking_top.ut parking_top.ncd 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+par -w -intstyle ise -ol high -mt off parking_top_map.ncd parking_top.ncd parking_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml parking_top.twx parking_top.ncd -o parking_top.twr parking_top.pcf -ucf parking_top.ucf 
+bitgen -intstyle ise -f parking_top.ut parking_top.ncd 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+par -w -intstyle ise -ol high -mt off parking_top_map.ncd parking_top.ncd parking_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml parking_top.twx parking_top.ncd -o parking_top.twr parking_top.pcf -ucf parking_top.ucf 
+bitgen -intstyle ise -f parking_top.ut parking_top.ncd 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+par -w -intstyle ise -ol high -mt off parking_top_map.ncd parking_top.ncd parking_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml parking_top.twx parking_top.ncd -o parking_top.twr parking_top.pcf -ucf parking_top.ucf 
+bitgen -intstyle ise -f parking_top.ut parking_top.ncd 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+par -w -intstyle ise -ol high -mt off parking_top_map.ncd parking_top.ncd parking_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml parking_top.twx parking_top.ncd -o parking_top.twr parking_top.pcf -ucf parking_top.ucf 
+bitgen -intstyle ise -f parking_top.ut parking_top.ncd 
+xst -intstyle ise -ifn "C:/xilinx_workspace/parking_top/parking_top.xst" -ofn "C:/xilinx_workspace/parking_top/parking_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc parking_top.ucf -p xc6slx9-tqg144-2 parking_top.ngc parking_top.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o parking_top_map.ncd parking_top.ngd parking_top.pcf 
+par -w -intstyle ise -ol high -mt off parking_top_map.ncd parking_top.ncd parking_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml parking_top.twx parking_top.ncd -o parking_top.twr parking_top.pcf -ucf parking_top.ucf 
+bitgen -intstyle ise -f parking_top.ut parking_top.ncd 

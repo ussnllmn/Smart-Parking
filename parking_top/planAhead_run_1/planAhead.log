@@ -1,0 +1,174 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Wed May 25 08:12:50 2022
+# Process ID: 8280
+# Log file: C:/xilinx_workspace/parking_top/planAhead_run_1/planAhead.log
+# Journal file: C:/xilinx_workspace/parking_top/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/xilinx_workspace/parking_top/pa.fromHdl.tcl
+# create_project -name parking_top -dir "C:/xilinx_workspace/parking_top/planAhead_run_1" -part xc6slx9tqg144-2
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "parking_top.ucf" [current_fileset -constrset]
+Adding file 'C:/xilinx_workspace/parking_top/parking_top.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {select_num_cars.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {parking_encoder.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {d_flipflop_out4bit.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {counter_4bit.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {bcd_7seg_decoder.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {parking_top.vhd}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set_property top parking_top $srcset
+# add_files [list {parking_top.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6slx9tqg144-2
+Using Verific elaboration
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/xilinx_workspace/parking_top/select_num_cars.vhd" into library work
+Parsing VHDL file "C:/xilinx_workspace/parking_top/parking_encoder.vhd" into library work
+Parsing VHDL file "C:/xilinx_workspace/parking_top/d_flipflop_out4bit.vhd" into library work
+Parsing VHDL file "C:/xilinx_workspace/parking_top/counter_4bit.vhd" into library work
+Parsing VHDL file "C:/xilinx_workspace/parking_top/bcd_7seg_decoder.vhd" into library work
+Parsing VHDL file "C:/xilinx_workspace/parking_top/parking_top.vhd" into library work
+WARNING: [HDL 9-946] Actual for formal port ir1 is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:100]
+WARNING: [HDL 9-946] Actual for formal port ir2 is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:101]
+WARNING: [HDL 9-946] Actual for formal port ir3 is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:102]
+WARNING: [HDL 9-946] Actual for formal port a is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:103]
+WARNING: [HDL 9-946] Actual for formal port b is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:104]
+WARNING: [HDL 9-946] Actual for formal port clk is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:110]
+WARNING: [HDL 9-946] Actual for formal port rst is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:111]
+WARNING: [HDL 9-946] Actual for formal port o is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:112]
+WARNING: [HDL 9-946] Actual for formal port d is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:117]
+WARNING: [HDL 9-946] Actual for formal port clk is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:118]
+WARNING: [HDL 9-946] Actual for formal port rst is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:119]
+WARNING: [HDL 9-946] Actual for formal port q is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:120]
+WARNING: [HDL 9-946] Actual for formal port d0 is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:125]
+WARNING: [HDL 9-946] Actual for formal port d1 is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:126]
+WARNING: [HDL 9-946] Actual for formal port s0 is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:127]
+WARNING: [HDL 9-946] Actual for formal port z is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:128]
+WARNING: [HDL 9-946] Actual for formal port b_in is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:133]
+WARNING: [HDL 9-946] Actual for formal port a is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:134]
+WARNING: [HDL 9-946] Actual for formal port b is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:135]
+WARNING: [HDL 9-946] Actual for formal port c is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:136]
+WARNING: [HDL 9-946] Actual for formal port d is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:137]
+WARNING: [HDL 9-946] Actual for formal port e is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:138]
+WARNING: [HDL 9-946] Actual for formal port f is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:139]
+WARNING: [HDL 9-946] Actual for formal port g is neither a static name nor a globally static expression [C:/xilinx_workspace/parking_top/parking_top.vhd:140]
+CRITICAL WARNING: [EDIF 20-96] Could not resolve non-primitive black box cell 'bcd_7seg_decoder' instantiated as 'Block4' [C:/xilinx_workspace/parking_top/parking_top.vhd:131]
+Resolution: File names need to match cell names: an EDIF definition will be found in bcd_7seg_decoder.edf; an HDL definition may be placed in any Verilog/VHDL file.
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/tqg144/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/xilinx_workspace/parking_top/parking_top.ucf]
+Finished Parsing UCF File [C:/xilinx_workspace/parking_top/parking_top.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 8f2e047c
+open_rtl_design: Time (s): elapsed = 00:00:08 . Memory (MB): peak = 666.449 ; gain = 173.184
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P41 [get_ports A]
+endgroup
+startgroup
+set_property package_pin P40 [get_ports B]
+endgroup
+startgroup
+set_property package_pin P35 [get_ports C]
+endgroup
+startgroup
+set_property package_pin P34 [get_ports D]
+endgroup
+startgroup
+set_property package_pin P32 [get_ports E]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports F]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports G]
+endgroup
+startgroup
+set_property package_pin P66 [get_ports IR1_FPGA]
+endgroup
+startgroup
+set_property package_pin P62 [get_ports IR2_FPGA]
+endgroup
+startgroup
+set_property package_pin P61 [get_ports IR3_FPGA]
+endgroup
+startgroup
+set_property package_pin P82 [get_ports num_car_lsb]
+endgroup
+startgroup
+set_property package_pin P81 [get_ports num_car_msb]
+endgroup
+startgroup
+set_property package_pin P59 [get_ports RFID]
+endgroup
+startgroup
+set_property package_pin P58 [get_ports RST_DATA]
+endgroup
+startgroup
+set_property package_pin P57 [get_ports RTC]
+endgroup
+startgroup
+set_property package_pin P56 [get_ports SW_FPGA]
+endgroup
+save_constraints
+refresh_design
+Using Verific elaboration
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/xilinx_workspace/parking_top/select_num_cars.vhd" into library work
+Parsing VHDL file "C:/xilinx_workspace/parking_top/parking_encoder.vhd" into library work
+Parsing VHDL file "C:/xilinx_workspace/parking_top/d_flipflop_out4bit.vhd" into library work
+Parsing VHDL file "C:/xilinx_workspace/parking_top/counter_4bit.vhd" into library work
+Parsing VHDL file "C:/xilinx_workspace/parking_top/bcd_7seg_decoder.vhd" into library work
+Parsing VHDL file "C:/xilinx_workspace/parking_top/parking_top.vhd" into library work
+Parsing UCF File [C:/xilinx_workspace/parking_top/parking_top.ucf]
+Finished Parsing UCF File [C:/xilinx_workspace/parking_top/parking_top.ucf]
+startgroup
+set_property package_pin P55 [get_ports RFID]
+endgroup
+save_constraints
+startgroup
+set_property package_pin P112 [get_ports RTC]
+endgroup
+save_constraints
+startgroup
+set_property package_pin P50 [get_ports RTC]
+endgroup
+save_constraints
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+ (See C:/xilinx_workspace/parking_top\planAhead_pid8280.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Wed May 25 09:17:04 2022...
+INFO: [Common 17-83] Releasing license: PlanAhead

@@ -43,13 +43,14 @@ end bcd_7seg_decoder;
 architecture Behavioral of bcd_7seg_decoder is
 
 begin
-	A <= B0 OR B2 OR (B1 AND B3) OR (NOT B1 AND NOT B3);
-	B <= (NOT B1) OR (NOT B2 AND NOT B3) OR (B2 AND B3);
-	C <= B1 OR NOT B2 OR B3;
-	D <= (NOT B1 AND NOT B3) OR (B2 AND NOT B3) OR (B1 AND NOT B2 AND B3) OR (NOT B1 AND B2) OR B0;
-	E <= (NOT B1 AND NOT B3) OR (B2 AND NOT B3);
-	F <= B0 OR (NOT B2 AND NOT B3) OR (B1 AND NOT B2) OR (B1 AND NOT B3);
-	G <= B0 OR (B1 AND NOT B2) OR ( NOT B1 AND B2) OR (B2 AND NOT B3);
+	A <= B_in(0) OR B_in(2) OR (B_in(1) AND B_in(3)) OR (NOT B_in(1) AND NOT B_in(3));
+	B <= (NOT B_in(1)) OR (NOT B_in(2) AND NOT B_in(3)) OR (B_in(2) AND B_in(3));
+	C <= B_in(1) OR NOT B_in(2) OR B_in(3);
+	D <= (NOT B_in(1) AND NOT B_in(3)) OR (B_in(2) AND NOT B_in(3)) OR (B_in(1) AND NOT B_in(2) AND B_in(3)) OR (NOT B_in(1) AND B_in(2)) OR B_in(0);
+	E <= (NOT B_in(1) AND NOT B_in(3)) OR (B_in(2) AND NOT B_in(3));
+	F <= B_in(0) OR (NOT B_in(2) AND NOT B_in(3)) OR (B_in(1) AND NOT B_in(2)) OR (B_in(1) AND NOT B_in(3));
+	G <= B_in(0) OR (B_in(1) AND NOT B_in(2)) OR ( NOT B_in(1) AND B_in(2)) OR (B_in(2) AND NOT B_in(3));
+
 
 
 end Behavioral;

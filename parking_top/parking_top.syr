@@ -1,0 +1,506 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: parking_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "parking_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "parking_top"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-tqg144
+
+---- Source Options
+Top Module Name                    : parking_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\xilinx_workspace\parking_top\select_num_cars.vhd" into library work
+Parsing entity <select_num_cars>.
+Parsing architecture <Behavioral> of entity <select_num_cars>.
+Parsing VHDL file "C:\xilinx_workspace\parking_top\parking_encoder.vhd" into library work
+Parsing entity <parking_encoder>.
+Parsing architecture <Behavioral> of entity <parking_encoder>.
+Parsing VHDL file "C:\xilinx_workspace\parking_top\d_flipflop_out4bit.vhd" into library work
+Parsing entity <d_flipflop_out4bit>.
+Parsing architecture <Behavioral> of entity <d_flipflop_out4bit>.
+Parsing VHDL file "C:\xilinx_workspace\parking_top\counter_4bit.vhd" into library work
+Parsing entity <counter_4bit>.
+Parsing architecture <Behavioral> of entity <counter_4bit>.
+Parsing VHDL file "C:\xilinx_workspace\parking_top\bcd_7seg_decoder.vhd" into library work
+Parsing entity <bcd_7seg_decoder>.
+Parsing architecture <Behavioral> of entity <bcd_7seg_decoder>.
+Parsing VHDL file "C:\xilinx_workspace\parking_top\parking_top.vhd" into library work
+Parsing entity <parking_top>.
+Parsing architecture <Behavioral> of entity <parking_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <parking_top> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\xilinx_workspace\parking_top\parking_top.vhd" Line 96: Using initial value '1' for common_high since it is never assigned
+WARNING:HDLCompiler:871 - "C:\xilinx_workspace\parking_top\parking_top.vhd" Line 97: Using initial value '0' for common_low since it is never assigned
+
+Elaborating entity <parking_encoder> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <counter_4bit> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\xilinx_workspace\parking_top\counter_4bit.vhd" Line 47: count should be on the sensitivity list of the process
+
+Elaborating entity <d_flipflop_out4bit> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <select_num_cars> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <bcd_7seg_decoder> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <parking_top>.
+    Related source file is "C:\xilinx_workspace\parking_top\parking_top.vhd".
+    Summary:
+	no macro.
+Unit <parking_top> synthesized.
+
+Synthesizing Unit <parking_encoder>.
+    Related source file is "C:\xilinx_workspace\parking_top\parking_encoder.vhd".
+    Summary:
+	no macro.
+Unit <parking_encoder> synthesized.
+
+Synthesizing Unit <counter_4bit>.
+    Related source file is "C:\xilinx_workspace\parking_top\counter_4bit.vhd".
+    Found 4-bit register for signal <count>.
+    Found 4-bit adder for signal <count[3]_GND_7_o_add_0_OUT> created at line 46.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+Unit <counter_4bit> synthesized.
+
+Synthesizing Unit <d_flipflop_out4bit>.
+    Related source file is "C:\xilinx_workspace\parking_top\d_flipflop_out4bit.vhd".
+    Found 4-bit register for signal <Q>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <d_flipflop_out4bit> synthesized.
+
+Synthesizing Unit <select_num_cars>.
+    Related source file is "C:\xilinx_workspace\parking_top\select_num_cars.vhd".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <select_num_cars> synthesized.
+
+Synthesizing Unit <bcd_7seg_decoder>.
+    Related source file is "C:\xilinx_workspace\parking_top\bcd_7seg_decoder.vhd".
+    Summary:
+	no macro.
+Unit <bcd_7seg_decoder> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 2
+ 4-bit register                                        : 2
+# Multiplexers                                         : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <counter_4bit>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <counter_4bit> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+# Multiplexers                                         : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <parking_top> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block parking_top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 8
+ Flip-Flops                                            : 8
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : parking_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 20
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 3
+#      LUT3                        : 6
+#      LUT4                        : 1
+#      LUT6                        : 7
+#      VCC                         : 1
+# FlipFlops/Latches                : 8
+#      FDC                         : 8
+# IO Buffers                       : 21
+#      IBUF                        : 8
+#      OBUF                        : 13
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:               8  out of  11440     0%  
+ Number of Slice LUTs:                   18  out of   5720     0%  
+    Number used as Logic:                18  out of   5720     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     19
+   Number with an unused Flip Flop:      11  out of     19    57%  
+   Number with an unused LUT:             1  out of     19     5%  
+   Number of fully used LUT-FF pairs:     7  out of     19    36%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                          21
+ Number of bonded IOBs:                  21  out of    102    20%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_out1(clk_out11:O)              | NONE(*)(Block2/Q_3)    | 4     |
+clk_out2(clk_out21:O)              | NONE(*)(Block1/count_0)| 4     |
+-----------------------------------+------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 2.510ns (Maximum Frequency: 398.406MHz)
+   Minimum input arrival time before clock: 3.770ns
+   Maximum output required time after clock: 6.832ns
+   Maximum combinational path delay: 7.942ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_out2'
+  Clock period: 2.510ns (frequency: 398.406MHz)
+  Total number of paths / destination ports: 10 / 4
+-------------------------------------------------------------------------
+Delay:               2.510ns (Levels of Logic = 1)
+  Source:            Block1/count_0 (FF)
+  Destination:       Block1/count_0 (FF)
+  Source Clock:      clk_out2 rising
+  Destination Clock: clk_out2 rising
+
+  Data Path: Block1/count_0 to Block1/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              9   0.525   0.975  Block1/count_0 (Block1/count_0)
+     INV:I->O              1   0.255   0.681  Block1/Mcount_count_xor<0>11_INV_0 (Result<0>)
+     FDC:D                     0.074          Block1/count_0
+    ----------------------------------------
+    Total                      2.510ns (0.854ns logic, 1.656ns route)
+                                       (34.0% logic, 66.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_out1'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              2.590ns (Levels of Logic = 1)
+  Source:            RST_DATA (PAD)
+  Destination:       Block2/Q_3 (FF)
+  Destination Clock: clk_out1 rising
+
+  Data Path: RST_DATA to Block2/Q_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.328   0.803  RST_DATA_IBUF (RST_DATA_IBUF)
+     FDC:CLR                   0.459          Block2/Q_0
+    ----------------------------------------
+    Total                      2.590ns (1.787ns logic, 0.803ns route)
+                                       (69.0% logic, 31.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_out2'
+  Total number of paths / destination ports: 8 / 4
+-------------------------------------------------------------------------
+Offset:              3.770ns (Levels of Logic = 2)
+  Source:            RTC (PAD)
+  Destination:       Block1/count_0 (FF)
+  Destination Clock: clk_out2 rising
+
+  Data Path: RTC to Block1/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.790  RTC_IBUF (RTC_IBUF)
+     LUT2:I0->O            8   0.250   0.943  clk_out11 (clk_out1)
+     FDC:CLR                   0.459          Block1/count_0
+    ----------------------------------------
+    Total                      3.770ns (2.037ns logic, 1.733ns route)
+                                       (54.0% logic, 46.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_out1'
+  Total number of paths / destination ports: 25 / 7
+-------------------------------------------------------------------------
+Offset:              6.792ns (Levels of Logic = 3)
+  Source:            Block2/Q_1 (FF)
+  Destination:       A (PAD)
+  Source Clock:      clk_out1 rising
+
+  Data Path: Block2/Q_1 to A
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.525   0.874  Block2/Q_1 (Block2/Q_1)
+     LUT3:I1->O            5   0.250   1.296  Block3/Mmux_Z21 (out_select<1>)
+     LUT6:I0->O            1   0.254   0.681  Block4/A<0>1 (A_OBUF)
+     OBUF:I->O                 2.912          A_OBUF (A)
+    ----------------------------------------
+    Total                      6.792ns (3.941ns logic, 2.851ns route)
+                                       (58.0% logic, 42.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_out2'
+  Total number of paths / destination ports: 25 / 7
+-------------------------------------------------------------------------
+Offset:              6.832ns (Levels of Logic = 3)
+  Source:            Block1/count_1 (FF)
+  Destination:       A (PAD)
+  Source Clock:      clk_out2 rising
+
+  Data Path: Block1/count_1 to A
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              7   0.525   0.910  Block1/count_1 (Block1/count_1)
+     LUT3:I2->O            5   0.254   1.296  Block3/Mmux_Z21 (out_select<1>)
+     LUT6:I0->O            1   0.254   0.681  Block4/A<0>1 (A_OBUF)
+     OBUF:I->O                 2.912          A_OBUF (A)
+    ----------------------------------------
+    Total                      6.832ns (3.945ns logic, 2.887ns route)
+                                       (57.7% logic, 42.3% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 28 / 9
+-------------------------------------------------------------------------
+Delay:               7.942ns (Levels of Logic = 4)
+  Source:            SW_FPGA (PAD)
+  Destination:       A (PAD)
+
+  Data Path: SW_FPGA to A
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            10   1.328   1.236  SW_FPGA_IBUF (SW_FPGA_IBUF)
+     LUT3:I0->O            5   0.235   1.296  Block3/Mmux_Z31 (out_select<2>)
+     LUT6:I0->O            1   0.254   0.681  Block4/F<0>1 (F_OBUF)
+     OBUF:I->O                 2.912          F_OBUF (F)
+    ----------------------------------------
+    Total                      7.942ns (4.729ns logic, 3.213ns route)
+                                       (59.5% logic, 40.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_out1
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_out2       |    1.574|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_out2
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_out2       |    2.510|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.98 secs
+ 
+--> 
+
+Total memory usage is 4500720 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
