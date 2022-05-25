@@ -8,6 +8,7 @@
 Servo In_servo;
 Servo Out_servo;
 int In_ir = A10, Out_ir = A11, in, out;
+int p1 = 43, p2 = 41, p3 = 39, park1, park2, park3;
 boolean in_status, out_status, bfor;
 
 #define SS_PIN 45
@@ -20,7 +21,7 @@ Time t;
 SoftwareSerial MegaSerial(A8, A9);
 int park[3];
 int InputA = 14, InputB = 15, A, B;
-String tag, thisTime, thisUser, cars, user , result, balance;
+String tag, thisTime, thisUser, cars, user = "Guest" , result, balance;
 
 int BLACK = 0x31C9, WHITE = 0xFFFF, RED = 0x9800, GREEN = 0x04C0, BLUE = 0x001F;
 int CYAN = 0x07FF, MAGENTA = 0xF81F, YELLOW = 0xFFE0, GREY = 0x2108;
@@ -45,10 +46,12 @@ void setup()
   pinMode(InputB, INPUT);
   pinMode(In_ir, INPUT);
   pinMode(Out_ir, INPUT);
-
+  pinMode(p1, INPUT);
+  pinMode(p2, INPUT);
+  pinMode(p3, INPUT);
   pinMode(S_rfid , OUTPUT);
 
-  
+
   // The following lines can be commented out to use the values already stored in the DS1302
   // rtc.setDOW(MONDAY); // Set Day-of-Week to FRIDAY
   // rtc.setTime(19,55, 10); // Set the time to 12:00:00 (24hr format)
@@ -104,41 +107,40 @@ void loop()
   }
 
   RFID();
+  Parking();
   //Door();
 
-  if (park[0] == 0)
-    tft.fillRect(2, 2, 104, 120, GREEN);
-  else
-    tft.fillRect(2, 2, 104, 120, RED);
-  if (park[1] == 0)
-    tft.fillRect(107, 2, 105, 120, GREEN);
-  else
-    tft.fillRect(107, 2, 105, 120, RED);
-  if (park[2] == 0)
-    tft.fillRect(214, 2, 104, 120, GREEN);
-  else
-    tft.fillRect(214, 2, 104, 120, RED);
 
   //  Clock();
 }
-void Door() {
-  in = digitalRead(In_ir);
-  out = digitalRead(Out_ir);
-  //  Serial.println(out);
-  if (in_status == true && in == false) {
-    In_servo.write(90);
-    bfor = 1;
-  } else if (in_status == true && in == true && bfor == 1) {
-    delay(5000);
-    bfor = 0;
-    in_status = false;
-    In_servo.write(0);
+void Parking() {
+  park1 = digitalRead(p1);
+  park2 = digitalRead(p2);
+  park3 = digitalRead(p3);
+
+  if ((park[0] != park1) || (park[1] != park2) || (park[2] != park3)) {
+    park[0] = park1;
+    park[1] = park2;
+    park[2] = park3;
+    Send_to_node();
   }
-  if (out == false) {
-    Out_servo.write(90);
-    delay(5000);
-    Out_servo.write(0);
-  }
+  
+  park[0] = park1;
+  park[1] = park2;
+  park[2] = park3;
+  
+  if (park1 == false)
+    tft.fillRect(2, 2, 104, 120, GREEN);
+  else
+    tft.fillRect(2, 2, 104, 120, RED);
+  if (park2 == false)
+    tft.fillRect(107, 2, 105, 120, GREEN);
+  else
+    tft.fillRect(107, 2, 105, 120, RED);
+  if (park3 == false)
+    tft.fillRect(214, 2, 104, 120, GREEN);
+  else
+    tft.fillRect(214, 2, 104, 120, RED);
 }
 
 void Decoder() {
