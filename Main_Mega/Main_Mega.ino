@@ -1,9 +1,12 @@
 #include <SPI.h>
 #include <RFID.h>
+#include <Servo.h>
 #include <DS1302.h>
 #include <SoftwareSerial.h>
 #include <SPFD5408_Adafruit_TFTLCD.h>
 
+Servo In_servo;
+Servo Out_servo;
 #define SS_PIN 45
 #define RST_PIN 53
 RFID rfid(SS_PIN, RST_PIN);
@@ -29,13 +32,18 @@ void setup()
   rfid.init();
   rtc.halt(false);
   rtc.writeProtect(false);
+  In_servo.attach(44);
+  Out_servo.attach(46);
   pinMode(InputA, OUTPUT);
   pinMode(InputB, OUTPUT);
   // The following lines can be commented out to use the values already stored in the DS1302
   // rtc.setDOW(MONDAY); // Set Day-of-Week to FRIDAY
   // rtc.setTime(19,55, 10); // Set the time to 12:00:00 (24hr format)
   // rtc.setDate(23, 5, 2022); // Set the date to August 6th, 2010
-
+  
+  In_servo.write(0);
+  Out_servo.write(0);
+  
   tft.reset();
   tft.begin(0x9341);
   tft.setRotation(3);
@@ -70,12 +78,15 @@ void loop()
   {
     balance = MegaSerial.readString();
     Serial.println(balance.toInt());
-    tft.setCursor (20, 210);
-    tft.print ("Balance " + balance);
+
     if (balance.toInt() > 0) {
-      Serial.println("pass");
+      tft.setCursor (20, 210);
+      tft.print ("Balance " + balance + "  ");
+      In_servo.write(90);
     } else {
-      Serial.println("fail");
+      tft.setCursor (20, 210);
+      tft.print ("Inefficient balance");
+      In_servo.write(0);
     }
   }
 
