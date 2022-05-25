@@ -14,7 +14,7 @@ const long timeoutTime = 2000;
 /////////////////////////////////////
 
 int b1 = 0, b2 = 0, b3 = 0;
-String recive = "", temp = "";
+String recive = "", total, temp = "";
 String header;
 
 void setup() {
@@ -68,10 +68,15 @@ void loop() {
             else if (header.indexOf("GET /2/100") >= 0) b2 += 100;
             else if (header.indexOf("GET /3/100") >= 0) b3 += 100;
 
-            if (recive == "")
+            if (recive == ""){
               recive = "0,0,0";
-            recive = "";
-            recive = temp;
+              temp = recive;
+            }        
+            else {
+              recive = "";
+              recive = temp;
+            }
+
             recive += ",";
             recive += b1;
             recive += ",";

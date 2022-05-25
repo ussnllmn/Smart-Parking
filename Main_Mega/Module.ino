@@ -44,7 +44,7 @@ void RFID() {
         result += park[2];
 //        result += ",";
 //        result += user;
-        MegaSerial.println(result);
+        MegaSerial.print(result);
         result = "";
         thisUser += "WELCOME " + user + "            ";
         tft.setCursor (20, 170);
