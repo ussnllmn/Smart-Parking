@@ -14,7 +14,7 @@ Time t;
 SoftwareSerial MegaSerial(A8, A9);
 int park[3];
 int InputA = 14, InputB = 15, A, B;
-String tag, thisTime, thisUser, cars, user , result, recive;
+String tag, thisTime, thisUser, cars, user , result, balance;
 
 int BLACK = 0x31C9, WHITE = 0xFFFF, RED = 0x9800, GREEN = 0x04C0, BLUE = 0x001F;
 int CYAN = 0x07FF, MAGENTA = 0xF81F, YELLOW = 0xFFE0, GREY = 0x2108;
@@ -62,21 +62,21 @@ void setup()
 
   tft.setCursor (39, 170);
   tft.print ("Please tap your card");
-
-  //  // Draw clock face
-  //  tft.drawCircle(xpos, 120 - dec, 125 - dec, 0xFFE0);
-  //  tft.fillCircle(xpos, 120 - dec, 118 - dec, 0x001F); //warna lingkaran luar
-  //  tft.fillCircle(xpos, 120 - dec, 110 - dec, 0x31C9); //warna jam bagian dalam
-  //  for (int a = 95; a < 104; a++)
-  //    tft.drawCircle(xpos, 120 - dec, a - dec, 0xFFFF);
 }
 
 void loop()
 {
   while (MegaSerial.available() > 0)
   {
-    recive = MegaSerial.readString();
-    Serial.println(recive);
+    balance = MegaSerial.readString();
+    Serial.println(balance.toInt());
+    tft.setCursor (20, 210);
+    tft.print ("Balance " + balance);
+    if (balance.toInt() > 0) {
+      Serial.println("pass");
+    } else {
+      Serial.println("fail");
+    }
   }
 
   RFID();
@@ -93,7 +93,7 @@ void loop()
   else
     tft.fillRect(214, 2, 104, 120, RED);
 
-  Clock();
+  //  Clock();
 }
 
 void Decoder() {

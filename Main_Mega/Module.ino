@@ -53,8 +53,8 @@ void RFID() {
         tft.print (thisUser);
         thisUser = "";
 
-        tft.setCursor (20, 210);
-        tft.print (tag + "  ");
+//        tft.setCursor (20, 210);
+//        tft.print (tag + "  ");
 
       } else {
         Serial.print(".");

@@ -14,7 +14,7 @@ const long timeoutTime = 2000;
 /////////////////////////////////////
 
 int b1 = 0, b2 = 0, b3 = 0;
-String recive = "", total, temp = "";
+String recive = "", total, temp = "", username;
 String header;
 
 void setup() {
@@ -41,6 +41,11 @@ void loop() {
     recive = NodeSerial.readString();
     temp = recive;
     Serial.println(recive);
+    int index = recive.indexOf(',');
+    username = recive.substring(0, index);
+    if (username == "DEW") NodeSerial.println(b1);
+    else if (username == "FON") NodeSerial.println(b2);
+    else if (username == "SEK") NodeSerial.println(b3);
   }
 
   WiFiClient client = server.available();   // Listen for incoming clients
@@ -75,6 +80,9 @@ void loop() {
             else {
               recive = "";
               recive = temp;
+              if (username == "DEW") NodeSerial.println(b1);
+              else if (username == "FON") NodeSerial.println(b2);
+              else if (username == "SEK") NodeSerial.println(b3);
             }
 
             recive += ",";
@@ -87,12 +95,6 @@ void loop() {
             client.print(recive);
             Serial.println(recive);
 
-            int index = recive.indexOf(',');
-            String username = recive.substring(0, index);
-            if (username == "DEW") NodeSerial.println(b1);
-            else if (username == "FON") NodeSerial.println(b2);
-            else if (username == "SEK") NodeSerial.println(b3);
-            
             break;
           } else {
             currentLine = "";
