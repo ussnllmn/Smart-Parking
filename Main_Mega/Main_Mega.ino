@@ -14,7 +14,7 @@ Time t;
 SoftwareSerial MegaSerial(A8, A9); 
 int park[3];
 int InputA = 14, InputB = 15, A, B;
-String tag, thisTime, thisUser, cars, user , result;
+String tag, thisTime, thisUser, cars, user , result,recive;
 
 int BLACK = 0x31C9, WHITE = 0xFFFF, RED = 0x9800, GREEN = 0x04C0, BLUE = 0x001F;
 int CYAN = 0x07FF, MAGENTA = 0xF81F, YELLOW = 0xFFE0, GREY = 0x2108;
@@ -73,9 +73,12 @@ void setup()
 
 void loop()
 {
-  if (Serial.available()) {
-    Serial.write(Serial.read());
+  while (MegaSerial.available() > 0)
+  {
+    recive = MegaSerial.readString();
+    Serial.println(recive);
   }
+  
   RFID();
   if (park[0] == 0)
     tft.fillRect(2, 2, 104, 120, GREEN);

@@ -69,7 +69,7 @@ void loop() {
             else if (header.indexOf("GET /3/100") >= 0) b3 += 100;
 
             if (recive == ""){
-              recive = "0,0,0";
+              recive = "Guest,0,0,0";
               temp = recive;
             }        
             else {
@@ -86,6 +86,7 @@ void loop() {
 
             client.print(recive);
             Serial.println(recive);
+            NodeSerial.println(recive);
 
             break;
           } else {

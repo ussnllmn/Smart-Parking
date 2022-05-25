@@ -37,13 +37,15 @@ void RFID() {
         Serial.println(tag);
 
         Serial.println(user);
+
+        result += user;
+        result += ",";
         result += park[0];
         result += ",";
         result += park[1];
         result += ",";
         result += park[2];
-//        result += ",";
-//        result += user;
+
         MegaSerial.print(result);
         result = "";
         thisUser += "WELCOME " + user + "            ";
