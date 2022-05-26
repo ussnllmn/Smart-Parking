@@ -56,7 +56,7 @@ void setup()
 
   //   The following lines can be commented out to use the values already stored in the DS1302
   //   rtc.setDOW(MONDAY); // Set Day-of-Week to FRIDAY
-  rtc.setTime(23, 59, 00); // Set the time to 12:00:00 (24hr format)
+  //  rtc.setTime(23, 59, 00); // Set the time to 12:00:00 (24hr format)
   //   rtc.setDate(23, 5, 2022); // Set the date to August 6th, 2010
 
   In_servo.write(0);
@@ -93,6 +93,7 @@ void setup()
 
 void loop()
 {
+  // Wait data from nodeMCU
   while (MegaSerial.available() > 0)
   {
     balance = MegaSerial.readString();
@@ -132,12 +133,18 @@ void loop()
     }
   }
 
+  // Open RFID module
   RFID();
+  // Open Door module
   Door();
+  // Open Parking module
   Parking();
-
+  
+  // Open Decoder and Clock
   if (in_status == false) {
+    // Open Decoder module
     Decoder();
+    // Open Clock module
     Clock();
   }
 }

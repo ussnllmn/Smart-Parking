@@ -32,6 +32,7 @@ void RFID() {
         Serial.print(tag);
         Serial.println(" " + user);
 
+        // Assemble result and send to nodeMCU
         result += user;
         result += ",";
         result += park[0];
@@ -60,7 +61,8 @@ void Parking() {
   park1 = digitalRead(p1);
   park2 = digitalRead(p2);
   park3 = digitalRead(p3);
-
+  
+  // Update park data to nodeMCU
   if ((park[0] != park1) || (park[1] != park2) || (park[2] != park3)) {
     park[0] = park1;
     park[1] = park2;
@@ -98,6 +100,7 @@ void Clock() {
   t = rtc.getTime();
   char *result = malloc(5);
 
+  // Add leading Zeros
   sprintf(result, "%02d", t.hour);
   thisTime += result;
   thisTime += ":";
@@ -114,6 +117,8 @@ void Clock() {
   tft.print (thisTime);
   //  delay (200);
   thisTime = "";
+
+  // Store and Reset data in FPGA
   if ( t.hour == 00 && t.min == 00 && t.sec == 00) {
     digitalWrite(S_store , HIGH);
     delay(50);
@@ -128,7 +133,8 @@ void Clock() {
 void Door() {
   in = digitalRead(In_ir);
   out = digitalRead(Out_ir);
-
+  
+  // Check sensor and balance to open
   if (in_status == true && in == false && pass == true) {
     In_servo.write(90);
     bfor = 1;

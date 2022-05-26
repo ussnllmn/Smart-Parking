@@ -36,6 +36,7 @@ void setup() {
 
 void loop() {
 
+  // Wait data from Mega
   while (NodeSerial.available() > 0)
   {
     recive = "";
@@ -44,6 +45,8 @@ void loop() {
     Serial.println(recive);
     int index = recive.indexOf(',');
     username = recive.substring(0, index);
+
+    // Calculate balance
     if (username == "DEW") {
       if (b1 >= 50) {
         b1 -= 50;
@@ -72,6 +75,7 @@ void loop() {
       }
     }
   }
+
   WiFiClient client = server.available();   // Listen for incoming clients
   if (client) {                             // If a new client connects,
     Serial.println("\n--- New Client ---"); // print a message out in the serial port
@@ -93,6 +97,7 @@ void loop() {
             client.println("Connection: close");
             client.println();
 
+            // Receive top up data
             if (header.indexOf("GET /1/100") >= 0) b1 += 100;
             else if (header.indexOf("GET /2/100") >= 0) b2 += 100;
             else if (header.indexOf("GET /3/100") >= 0) b3 += 100;
@@ -104,11 +109,9 @@ void loop() {
             else {
               recive = "";
               recive = temp;
-              //              if (username == "DEW") NodeSerial.println(b1);
-              //              else if (username == "FON") NodeSerial.println(b2);
-              //              else if (username == "SEK") NodeSerial.println(b3);
             }
 
+            // Assemble recive and balance then send to nodeMCU
             recive += ",";
             recive += b1;
             recive += ",";
