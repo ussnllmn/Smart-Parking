@@ -29,7 +29,7 @@ byte LCD_CS = A3, LCD_CD = A2, LCD_WR = A1, LCD_RD = A0, LCD_RESET = A4;
 Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
 
 ////////////// FPGA //////////////
-int S_rfid = A15, S_store = 35;
+int S_rfid = A15, S_store = 35, S_reset = A12;
 //////////////////////////////////
 
 void setup()
@@ -52,6 +52,7 @@ void setup()
 
   pinMode(S_store , OUTPUT);
   pinMode(S_rfid , OUTPUT);
+  pinMode(S_reset , OUTPUT);
 
   //   The following lines can be commented out to use the values already stored in the DS1302
   //   rtc.setDOW(MONDAY); // Set Day-of-Week to FRIDAY
@@ -97,6 +98,9 @@ void loop()
     balance = MegaSerial.readString();
     //    Serial.println(balance.toInt());
     if (balance.toInt() >= 50) {
+      digitalWrite(S_rfid , HIGH);
+      delay(100);
+      digitalWrite(S_rfid , LOW);
       tft.setCursor (20, 210);
       tft.print ("                        ");
       tft.setCursor (20, 210);
@@ -107,6 +111,7 @@ void loop()
       tft.fillRect(0, 238, 320, 2, 0xBC9F);
       pass = true;
       in_status = true;
+
     } else {
       tft.setCursor (20, 210);
       tft.print ("Inefficient balance         ");
@@ -152,5 +157,5 @@ void Decoder() {
 
   tft.setCursor (20, 210);
   tft.print ("Total car: " + cars);
-//  Serial.println(cars);
+  //  Serial.println(cars);
 }

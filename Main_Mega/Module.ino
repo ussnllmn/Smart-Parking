@@ -43,10 +43,6 @@ void RFID() {
         result = "";
         in_status = true;
 
-        digitalWrite(S_rfid , HIGH);
-        delay(100);
-        digitalWrite(S_rfid , LOW);
-
         thisUser += "WELCOME " + user + "            ";
         tft.setCursor (20, 170);
         tft.print (thisUser);
@@ -122,7 +118,10 @@ void Clock() {
     digitalWrite(S_store , HIGH);
     delay(50);
     digitalWrite(S_store , LOW);
-
+    delay(100);
+    digitalWrite(S_reset , HIGH);
+    delay(50);
+    digitalWrite(S_reset , LOW);
   }
 }
 
