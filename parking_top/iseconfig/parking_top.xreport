@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2022-05-25T08:44:23</DateModified>
+  <DateModified>2022-05-26T05:23:52</DateModified>
   <ModuleName>parking_top</ModuleName>
-  <SummaryTimeStamp>2022-05-25T08:42:50</SummaryTimeStamp>
+  <SummaryTimeStamp>2022-05-26T04:40:18</SummaryTimeStamp>
   <SavedFilePath>C:/xilinx_workspace/parking_top/iseconfig/parking_top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/xilinx_workspace/parking_top</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/xilinx_workspace/parking_top\</ImplementationReportsDirectory>
   <DateInitialized>2022-05-25T06:13:57</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

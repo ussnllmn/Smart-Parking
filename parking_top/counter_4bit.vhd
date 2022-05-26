@@ -44,9 +44,9 @@ begin
 			
 			if (rst = '1') then count <= "0000";
 			elsif (clk'event and clk = '1') then count <= count + 1;
-			elsif (count > "1001") then count <="0000";
+			if (count >= "1001") then count <="0000";
 			end if;
-			
+			end if;
       end process;
       o <= count;
 

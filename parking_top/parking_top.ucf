@@ -25,6 +25,9 @@ NET "COMMON_1" LOC = P43;
 NET "COMMON_2" LOC = P33;
 NET "COMMON_3" LOC = P30;
 
+
+NET "CLK_in" LOC = P123;
+
 # PlanAhead Generated physical constraints 
 
-NET "CLK_in" LOC = P50;
+NET "RST_COUNTER" LOC = P105;

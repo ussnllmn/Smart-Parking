@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-8PRFSQQ::  Wed May 25 12:00:35 2022
+DESKTOP-8PRFSQQ::  Thu May 26 06:01:58 2022
 
 par -w -intstyle ise -ol high -mt off parking_top_map.ncd parking_top.ncd
 parking_top.pcf 
@@ -27,26 +27,30 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                     8 out of  11,440    1%
-    Number used as Flip Flops:                   8
+  Number of Slice Registers:                    41 out of  11,440    1%
+    Number used as Flip Flops:                  41
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                         15 out of   5,720    1%
-    Number used as logic:                       15 out of   5,720    1%
-      Number using O6 output only:              12
-      Number using O5 output only:               0
-      Number using O5 and O6:                    3
+  Number of Slice LUTs:                         86 out of   5,720    1%
+    Number used as logic:                       85 out of   5,720    1%
+      Number using O6 output only:              48
+      Number using O5 output only:              30
+      Number using O5 and O6:                    7
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
+    Number used exclusively as route-thrus:      1
+      Number with same-slice register load:      0
+      Number with same-slice carry load:         1
+      Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                     7 out of   1,430    1%
-  Number of MUXCYs used:                         0 out of   2,860    0%
-  Number of LUT Flip Flop pairs used:           16
-    Number with an unused Flip Flop:             8 out of      16   50%
-    Number with an unused LUT:                   1 out of      16    6%
-    Number of fully used LUT-FF pairs:           7 out of      16   43%
+  Number of occupied Slices:                    28 out of   1,430    1%
+  Number of MUXCYs used:                        32 out of   2,860    1%
+  Number of LUT Flip Flop pairs used:           87
+    Number with an unused Flip Flop:            48 out of      87   55%
+    Number with an unused LUT:                   1 out of      87    1%
+    Number of fully used LUT-FF pairs:          38 out of      87   43%
     Number of slice register sites lost
       to control set restrictions:               0 out of  11,440    0%
 
@@ -57,15 +61,17 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        21 out of     102   20%
-    Number of LOCed IOBs:                       21 out of      21  100%
+  Number of bonded IOBs:                        22 out of     102   21%
+    Number of LOCed IOBs:                       22 out of      22  100%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
   Number of RAMB8BWERs:                          0 out of      64    0%
   Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
   Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
-  Number of BUFG/BUFGMUXs:                       0 out of      16    0%
+  Number of BUFG/BUFGMUXs:                       1 out of      16    6%
+    Number used as BUFGs:                        1
+    Number used as BUFGMUX:                      0
   Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
   Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
@@ -93,13 +99,13 @@ Finished initial Timing Analysis.  REAL time: 2 secs
 Starting Router
 
 
-Phase  1  : 90 unrouted;      REAL time: 2 secs 
+Phase  1  : 289 unrouted;      REAL time: 2 secs 
 
-Phase  2  : 87 unrouted;      REAL time: 3 secs 
+Phase  2  : 241 unrouted;      REAL time: 3 secs 
 
-Phase  3  : 34 unrouted;      REAL time: 3 secs 
+Phase  3  : 47 unrouted;      REAL time: 3 secs 
 
-Phase  4  : 34 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase  4  : 47 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
 Updating file: parking_top.ncd with current fully routed design.
 
@@ -135,8 +141,11 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     1.740ns|     N/A|           0
-  _out2                                     | HOLD        |     0.458ns|            |       0|           0
+  Autotimespec constraint for clock net CLK | SETUP       |         N/A|     4.637ns|     N/A|           0
+  _in_BUFGP                                 | HOLD        |     0.464ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     1.486ns|     N/A|           0
+  _out2                                     | HOLD        |     0.436ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -155,7 +164,7 @@ All signals are completely routed.
 Total REAL time to PAR completion: 3 secs 
 Total CPU time to PAR completion: 3 secs 
 
-Peak Memory Usage:  4473 MB
+Peak Memory Usage:  4477 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

@@ -1,10 +1,11 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed May 25 12:00:33 2022
+// Written by: Map P.20131013 on Thu May 26 06:01:55 2022
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "RST_COUNTER" LOCATE = SITE "P105" LEVEL 1;
 COMP "IR2_FPGA" LOCATE = SITE "P120" LEVEL 1;
-COMP "CLK_in" LOCATE = SITE "P50" LEVEL 1;
+COMP "CLK_in" LOCATE = SITE "P123" LEVEL 1;
 COMP "COMMON_0" LOCATE = SITE "P44" LEVEL 1;
 COMP "COMMON_1" LOCATE = SITE "P43" LEVEL 1;
 COMP "COMMON_2" LOCATE = SITE "P33" LEVEL 1;
