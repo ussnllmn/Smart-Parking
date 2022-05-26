@@ -16,6 +16,7 @@ const long timeoutTime = 2000;
 int b1 = 0, b2 = 0, b3 = 0;
 String recive = "", total, temp = "", username;
 String header;
+boolean first = true;
 
 void setup() {
   Serial.begin(9600);
@@ -43,11 +44,34 @@ void loop() {
     Serial.println(recive);
     int index = recive.indexOf(',');
     username = recive.substring(0, index);
-    if (username == "DEW") NodeSerial.println(b1);
-    else if (username == "FON") NodeSerial.println(b2);
-    else if (username == "SEK") NodeSerial.println(b3);
+    if (username == "DEW") {
+      if (b1 >= 50) {
+        b1 -= 50;
+        NodeSerial.println(b1);
+      }
+      else {
+        NodeSerial.println(b1);
+      }
+    }
+    else if (username == "FON") {
+      if (b2 >= 50) {
+        b2 -= 50;
+        NodeSerial.println(b2);
+      }
+      else {
+        NodeSerial.println(b2);
+      }
+    }
+    else if (username == "SEK") {
+      if (b3 >= 50) {
+        b3 -= 50;
+        NodeSerial.println(b3);
+      }
+      else {
+        NodeSerial.println(b3);
+      }
+    }
   }
-
   WiFiClient client = server.available();   // Listen for incoming clients
   if (client) {                             // If a new client connects,
     Serial.println("\n--- New Client ---"); // print a message out in the serial port
@@ -80,9 +104,9 @@ void loop() {
             else {
               recive = "";
               recive = temp;
-              if (username == "DEW") NodeSerial.println(b1);
-              else if (username == "FON") NodeSerial.println(b2);
-              else if (username == "SEK") NodeSerial.println(b3);
+              //              if (username == "DEW") NodeSerial.println(b1);
+              //              else if (username == "FON") NodeSerial.println(b2);
+              //              else if (username == "SEK") NodeSerial.println(b3);
             }
 
             recive += ",";

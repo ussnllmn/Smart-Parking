@@ -9,7 +9,7 @@ Servo In_servo;
 Servo Out_servo;
 int In_ir = A10, Out_ir = A11, in, out;
 int p1 = 43, p2 = 41, p3 = 39, park1, park2, park3;
-boolean in_status, out_status, bfor;
+boolean in_status, bfor, pass;
 
 #define SS_PIN 45
 #define RST_PIN 53
@@ -20,8 +20,8 @@ Time t;
 
 SoftwareSerial MegaSerial(A8, A9);
 int park[3];
-int InputA = 14, InputB = 15, A, B;
-String tag, thisTime, thisUser, cars, user = "Guest" , result, balance;
+int InputA = A13, InputB = A14, A, B;
+String tag, thisTime, thisUser, user = "Guest" , result, balance, cars;
 
 int BLACK = 0x31C9, WHITE = 0xFFFF, RED = 0x9800, GREEN = 0x04C0, BLUE = 0x001F;
 int CYAN = 0x07FF, MAGENTA = 0xF81F, YELLOW = 0xFFE0, GREY = 0x2108;
@@ -29,7 +29,7 @@ byte LCD_CS = A3, LCD_CD = A2, LCD_WR = A1, LCD_RD = A0, LCD_RESET = A4;
 Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
 
 ////////////// FPGA //////////////
-int S_rfid = A15;
+int S_rfid = A15, S_store = 35;
 //////////////////////////////////
 
 void setup()
@@ -49,20 +49,21 @@ void setup()
   pinMode(p1, INPUT);
   pinMode(p2, INPUT);
   pinMode(p3, INPUT);
+
+  pinMode(S_store , OUTPUT);
   pinMode(S_rfid , OUTPUT);
 
-
-  // The following lines can be commented out to use the values already stored in the DS1302
-  // rtc.setDOW(MONDAY); // Set Day-of-Week to FRIDAY
-  // rtc.setTime(19,55, 10); // Set the time to 12:00:00 (24hr format)
-  // rtc.setDate(23, 5, 2022); // Set the date to August 6th, 2010
+  //   The following lines can be commented out to use the values already stored in the DS1302
+  //   rtc.setDOW(MONDAY); // Set Day-of-Week to FRIDAY
+  rtc.setTime(23, 59, 00); // Set the time to 12:00:00 (24hr format)
+  //   rtc.setDate(23, 5, 2022); // Set the date to August 6th, 2010
 
   In_servo.write(0);
   Out_servo.write(0);
 
   tft.reset();
   tft.begin(0x9341);
-  tft.setRotation(3);
+  tft.setRotation(1);
   tft.fillScreen(0x31C9);
   // Border screen
   tft.fillRect(318, 0, 2, 240, 0xBC9F);
@@ -86,6 +87,7 @@ void setup()
 
   tft.setCursor (39, 170);
   tft.print ("Please tap your card");
+
 }
 
 void loop()
@@ -93,54 +95,46 @@ void loop()
   while (MegaSerial.available() > 0)
   {
     balance = MegaSerial.readString();
-    Serial.println(balance.toInt());
-
-    if (balance.toInt() >= 0) {
+    //    Serial.println(balance.toInt());
+    if (balance.toInt() >= 50) {
       tft.setCursor (20, 210);
-      tft.print ("Balance " + balance + "  ");
+      tft.print ("                        ");
+      tft.setCursor (20, 210);
+      tft.print ("Balance " + balance);
+      tft.fillRect(318, 0, 2, 240, 0xBC9F);
+      tft.fillRect(0, 0, 2, 240, 0xBC9F);
+      tft.fillRect(0, 0, 320, 2, 0xBC9F);
+      tft.fillRect(0, 238, 320, 2, 0xBC9F);
+      pass = true;
       in_status = true;
     } else {
       tft.setCursor (20, 210);
-      tft.print ("Inefficient balance");
-
+      tft.print ("Inefficient balance         ");
+      tft.fillRect(318, 0, 2, 240, 0xBC9F);
+      tft.fillRect(0, 0, 2, 240, 0xBC9F);
+      tft.fillRect(0, 0, 320, 2, 0xBC9F);
+      tft.fillRect(0, 238, 320, 2, 0xBC9F);
+      delay(3000);
+      bfor = 0;
+      tft.setCursor (20, 170);
+      tft.print ("   ");
+      tft.setCursor (39, 170);
+      tft.print ("Please tap your card");
+      tft.setCursor (20, 210);
+      tft.print ("                        ");
+      pass = false;
+      in_status = false;
     }
   }
 
   RFID();
+  Door();
   Parking();
-  //Door();
 
-
-  //  Clock();
-}
-void Parking() {
-  park1 = digitalRead(p1);
-  park2 = digitalRead(p2);
-  park3 = digitalRead(p3);
-
-  if ((park[0] != park1) || (park[1] != park2) || (park[2] != park3)) {
-    park[0] = park1;
-    park[1] = park2;
-    park[2] = park3;
-    Send_to_node();
+  if (in_status == false) {
+    Decoder();
+    Clock();
   }
-  
-  park[0] = park1;
-  park[1] = park2;
-  park[2] = park3;
-  
-  if (park1 == false)
-    tft.fillRect(2, 2, 104, 120, GREEN);
-  else
-    tft.fillRect(2, 2, 104, 120, RED);
-  if (park2 == false)
-    tft.fillRect(107, 2, 105, 120, GREEN);
-  else
-    tft.fillRect(107, 2, 105, 120, RED);
-  if (park3 == false)
-    tft.fillRect(214, 2, 104, 120, GREEN);
-  else
-    tft.fillRect(214, 2, 104, 120, RED);
 }
 
 void Decoder() {
@@ -148,22 +142,15 @@ void Decoder() {
   B = digitalRead(InputB);
 
   if (A == 0 && B == 0)
-    cars = "0,0,0";
+    cars = "0";
   else if (A == 0 && B == 1)
-    cars = "0,0,1";
-  else if (A == 0 && B == 1)
-    cars = "0,0,1";
-  else if (A == 0 && B == 1)
-    cars = "0,0,1";
-  else if (A == 0 && B == 1)
-    cars = "0,0,1";
-  else if (A == 0 && B == 1)
-    cars = "0,0,1";
-  else if (A == 0 && B == 1)
-    cars = "0,0,1";
-  else if (A == 0 && B == 1)
-    cars = "0,0,1";
-  else if (A == 0 && B == 1)
-    cars = "0,0,1";
-  Serial.println(cars);
+    cars = "1";
+  else if (A == 1 && B == 0)
+    cars = "2";
+  else if (A == 1 && B == 1)
+    cars = "3";
+
+  tft.setCursor (20, 210);
+  tft.print ("Total car: " + cars);
+//  Serial.println(cars);
 }
